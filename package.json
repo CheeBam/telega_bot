@@ -1,0 +1,30 @@
+{
+  "name": "testbot3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "concurrently -k \"npm run build:watch\" \"npm run start:dev\"",
+    "start": "node dist/index.js",
+    "start:dev": "nodemon --exec 'node --inspect=0.0.0.0:9229 --require ts-node/register dist/index.js'",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.18.2",
+    "telegraf": "^3.33.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.6.4"
+  }
+}
